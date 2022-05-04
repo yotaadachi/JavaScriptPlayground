@@ -1,21 +1,12 @@
-const value = 1;
-
-console.log(value);
-
-if(true) {
-  const value = 2;
-  console.log(value);
+function square(length) {
+  return length * length;
 }
-console.log(value);
 
-const profile = {
-  age: 45,
-  name: 'Ham',
-};
+const area = square(3);
+console.log(area);
 
-console.log(profile);
+const calculatedArea = function(length) {
+  return length * length;
+}
 
-//profile.gender = 'male';
-profile['gender'] = 'female';
-
-console.log(profile);
+console.log(calculatedArea(10));
