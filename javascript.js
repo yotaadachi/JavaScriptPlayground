@@ -1,15 +1,19 @@
-const promise = new Promise((resolve, reject) => {
-  // 時間のかかる処理
-  // resolve();
-  setTimeout(() => {
-    console.log('1秒たったよ');
-    resolve();
-  }, 1000);
-});
+const sleep = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('1秒経ったよ');
+      resolve();
+    }, 1000);
+  });
+};
+
+const promise = sleep();
 console.log(promise);
 
 promise.then(() => {
-  console.log('I am called by then method');
+  return sleep();
+}).then(() => {
+  return sleep();
 });
 console.log('start');
 
