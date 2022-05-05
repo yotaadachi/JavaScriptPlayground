@@ -1,12 +1,11 @@
-function square(length) {
-  return length * length;
+
+const square = length => length * length;
+
+console.log(square(4));
+
+function foo() {
+  return true;
 }
 
-const area = square(3);
-console.log(area);
-
-const calculatedArea = function(length) {
-  return length * length;
-}
-
-console.log(calculatedArea(10));
+console.log(foo());
+console.log(foo);
