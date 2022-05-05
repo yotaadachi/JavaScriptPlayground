@@ -1,4 +1,12 @@
-console.log(1);
+const promise = new Promise((resolve, reject) => {
+  // 時間のかかる処理
+  // resolve();
+  console.log(resolve);
+  console.log(reject);
+});
+console.log(promise);
+console.log('start');
+
 setTimeout(() => {
   console.log('1秒たったよ');
   setTimeout(() => {
@@ -8,4 +16,5 @@ setTimeout(() => {
     }, 1000);
   }, 1000);
 }, 1000);
-console.log(3);
+
+console.log('end');
