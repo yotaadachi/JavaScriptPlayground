@@ -1,3 +1,7 @@
-import square from './utils.js';
+const nickname = 'Ham';
+const age = 45;
+console.log(nickname);
+console.log(age);
 
-console.log(square(5));
+// "I am Ham, 45 years old."
+console.log(`I am ${nickname}, ${age} years old.`);
