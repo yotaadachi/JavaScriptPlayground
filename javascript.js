@@ -1,7 +1,6 @@
-const nickname = 'Ham';
-const age = 45;
+const array = ['Ham', 45, 'EggPlants', 'Oranges'];
+const [nickname, age, ...rest] = array;
+
 console.log(nickname);
 console.log(age);
-
-// "I am Ham, 45 years old."
-console.log(`I am ${nickname}, ${age} years old.`);
+console.log(rest);
