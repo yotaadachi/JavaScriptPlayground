@@ -1,30 +1,20 @@
-const sleep = () => {
-  return new Promise((resolve, reject) => {
+console.log('start');
+
+const sleep = (milliseconds) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      console.log('1秒経ったよ');
+      console.log(`${milliseconds} ms`);
       resolve();
-    }, 1000);
+    }, milliseconds);
   });
 };
 
-const promise = sleep();
-console.log(promise);
-
-promise.then(() => {
-  return sleep();
-}).then(() => {
-  return sleep();
-});
-console.log('start');
-
-// setTimeout(() => {
-//   console.log('1秒たったよ');
-//   setTimeout(() => {
-//     console.log('1秒たったよ');
-//     setTimeout(() => {
-//       console.log('1秒たったよ');
-//     }, 1000);
-//   }, 1000);
-// }, 1000);
+sleep(900)
+  .then(() => sleep(901))
+  .then(() => sleep(902))
+  .then(() => sleep(903))
+  .then(() => sleep(904))
+  .then(() => sleep(905))
+  .then(() => sleep(906));
 
 console.log('end');
