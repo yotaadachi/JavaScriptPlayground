@@ -1,10 +1,13 @@
-const url = 'https://jsonplaceholder.typicode.com/users';
+setTimeout(() => console.log(1));
 
-const fetchUsers = async () => {
-  const result = await fetch(url);
-  console.log({ result });
-  const json = result.json();
-  console.log({ json });
-};
+queueMicrotask(() => console.log(2));
 
-fetchUsers();
+new Promise((resolve) => {
+  console.log(3);
+  setTimeout(() => console.log(4));
+  resolve();
+}).then(() => {
+  console.log(5);
+});
+
+console.log(6);
